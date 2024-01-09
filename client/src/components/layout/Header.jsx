@@ -49,6 +49,11 @@ const Header = () => {
               </Button>
             </li>
             <li>
+              <Button component={NavLink} to={'/product'} style={({ isActive }) => ({ color: isActive ? 'white' : 'black', textTransform: 'none', backgroundColor: isActive ? 'blue' : '' })}>
+                product
+              </Button>
+            </li>
+            <li>
               {access_token ? <Button component={NavLink} to={'/dashboard'} style={({ isActive }) => ({ color: isActive ? 'white' : 'black', textTransform: 'none', backgroundColor: isActive ? 'blue' : '' })}>
                 Dashboard
               </Button> : <Button component={NavLink} to={'/login'} style={({ isActive }) => ({ color: isActive ? 'white' : 'black', textTransform: 'none', backgroundColor: isActive ? 'blue' : '' })}>
@@ -102,6 +107,11 @@ const Header = () => {
             <li>
               <Button component={NavLink} to={'/contact'} style={({ isActive }) => ({ color: 'white', textTransform: 'none', backgroundColor: isActive ? 'blue' : '' })}>
                 Contact
+              </Button>
+            </li>
+            <li>
+              <Button component={NavLink} to={'/product'} style={({ isActive }) => ({ color: 'white', textTransform: 'none', backgroundColor: isActive ? 'blue' : '' })}>
+                product
               </Button>
             </li>
             <li>

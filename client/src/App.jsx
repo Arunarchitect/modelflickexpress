@@ -19,6 +19,7 @@ import EditPost from "./pages/blog/EditPost"
 import Scheduler from "./pages/tools/Scheduler"
 import Employee from "./pages/tools/Employee"
 import About from "./pages/About"
+import Product from "./pages/Product"
 
 
 
@@ -34,6 +35,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/product" element={<Product />} />
             <Route path="/post/:id" element={<Post />} />
             <Route path="/edit/:blogId" element={<EditPost />} />
             <Route path="/test" element={<Test />} />
