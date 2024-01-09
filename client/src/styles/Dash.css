@@ -1,0 +1,93 @@
+.paddingall{
+    padding: 10px 10px 10px 10px;
+}
+
+.gradient{
+    background: rgb(255, 255, 255);
+    background: linear-gradient(158deg, rgba(255, 255, 255, 0.027) 0%,blue) 100%;
+}
+
+.gradient1{
+    background: rgb(255, 255, 255);
+    background: linear-gradient(158deg, rgba(255, 255, 255, 0.027) 0%,rgb(0, 255, 55)) 100%;
+    
+}
+
+.gradient2{
+    background: rgb(255, 255, 255);
+    background: linear-gradient(158deg, rgba(255, 255, 255, 0.027) 0%,rgb(255, 30, 0)) 100%;
+}
+
+.gradient3{
+    background: rgb(255, 255, 255);
+    background: linear-gradient(158deg, rgba(238, 235, 235, 0.247) 0%,rgba(188, 206, 188, 0.801))00%;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.bg{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(158deg, rgb(0, 0, 0) 0%,rgb(0, 0, 0)) 100%;
+    
+}
+
+.custom-label {
+    font-size: 2px; /* Adjust the font size here */
+  }
+
+
+.custom-radio-group .MuiSvgIcon-root {
+    font-size: 12px; /* Adjust the font size here */
+    margin-right: 1px; /* Adjust the spacing between the radio button and label here */
+  }
+  
+.cardgradient {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(158deg, rgba(255, 255, 255, 0.027) 0%, rgb(202, 202, 206)) 100%;
+ /* You can adjust the value to your preference */
+    /* You can also use percentages for a responsive design, like border-radius: 5%; */
+}
+ 
+
+
+@keyframes shiver {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(2px); }
+  }
+  
+.card-shiver {
+animation: shiver 2s infinite;
+}
+  
+.tick-mark-animation {
+    animation: fadeInScale 0.5s ease-in-out;
+  }
+  
+  @keyframes fadeInScale {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+.loading-spinner {
+border: 4px solid rgba(0, 0, 0, 0.1);
+border-left: 4px solid #000;
+border-radius: 50%;
+width: 20px;
+height: 20px;
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
