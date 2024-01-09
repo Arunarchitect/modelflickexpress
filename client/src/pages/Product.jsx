@@ -1,19 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import Typography from '@mui/material/Typography';
 import { Grid, Container } from '@mui/material';
 import { Link } from 'react-router-dom';
-import TshirtImg from '../images/construct.png'
+import TshirtImg from '../images/construct.png';
 
-function Product  ()  {
-    const amount = 10500;
+function Product() {
+  const [amount, setAmount] = useState();
   const currency = "INR";
   const receiptId = "r1";
 
-
   // Use import.meta.env.DEV to check if the app is in development
   const baseUrl = import.meta.env.DEV ? 'http://localhost:5000' : '';
-  
 
   const paymentHandler = async (e) => {
     console.log('baseUrl:', baseUrl);
@@ -32,13 +30,13 @@ function Product  ()  {
     console.log(order);
 
     var options = {
-      key: "rzp_live_MyISyBMETyjUMF", // Enter the Key ID generated from the Dashboard
-      amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      key: "rzp_live_MyISyBMETyjUMF",
+      amount,
       currency,
-      name: "Modelflick", //your business name
+      name: "Modelflick",
       description: "Donation",
       image: TshirtImg,
-      order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      order_id: order.id,
       handler: async function (response) {
         const body = {
           ...response,
@@ -57,10 +55,9 @@ function Product  ()  {
         console.log(jsonRes);
       },
       prefill: {
-        //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
-        name: "Modellfick", //your customer's name
+        name: "Modellfick",
         email: "modelflick@gmail.com",
-        contact: "9447648320", //Provide the customer's phone number for better conversion rates
+        contact: "9447648320",
       },
       notes: {
         address: "Razorpay Corporate Office",
@@ -87,15 +84,24 @@ function Product  ()  {
     <Layout>
       <Container>
         <div className="product">
-            <h2>Tshirt</h2>
-            <p>Solid blue cotton Tshirt</p>
-            <img src={TshirtImg} />
-            <br />
-            <button onClick={paymentHandler}>Pay</button>
+          <h2>Tshirt</h2>
+          <p>Solid blue cotton Tshirt</p>
+          <img src={TshirtImg} alt="Tshirt" />
+          <br />
+          <label>
+            Amount:
+            <input
+              type="number"
+              value={amount}
+              onChange={(e) => setAmount(parseInt(e.target.value, 10))}
+            />
+          </label>
+          <br />
+          <button onClick={paymentHandler}>Pay</button>
         </div>
       </Container>
     </Layout>
   );
-};
+}
 
 export default Product;
